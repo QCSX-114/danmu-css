@@ -1,0 +1,776 @@
+/*
+  @title        鎬墿鐚庝汉鑽掗噹寮瑰箷
+  @author       B绔欓_Official&涓嶄弗鑲冨伐鍧�
+  @description  璇蜂粠姝ｈ鎴栦綔鑰呮巿鏉冪殑娓犻亾鑾峰彇姝ゆ牱寮忓苟浣跨敤锛侊紒锛�
+  @updated      5/12/2025
+  @version      V1.00
+  @thumbnail    https://img.alicdn.com/imgextra/i1/2208695577013/O1CN01hFPTgU21g0fFucKRR_!!2208695577013.png
+*/
+
+
+/*OBS鍐呭叏灞€閫忔槑鑳屾櫙*/
+body { background-color: rgba(0, 0, 0, 0);}
+
+
+/*鍏ㄥ眬閰嶇疆&鏂囧瓧闃村奖閰嶇疆*/
+.event{
+  font-family: "鎬濇簮榛戜綋 CN";
+  --shadow-color4:#c6ad3c;
+  --shadow-color3: #00000012;
+  --shadow-color2: #28241953;
+  --shadow-color: #00000051;
+  --text-shadow3: -2px -2px var(--shadow-color3), -2px -1px var(--shadow-color3), -2px 0px var(--shadow-color3), -2px 1px var(--shadow-color3),
+   -2px 2px var(--shadow-color3), -1px -2px var(--shadow-color3), -1px -1px var(--shadow-color3), -1px 0px var(--shadow-color3), -1px 1px var(--shadow-color3), -1px 2px var(--shadow-color3), 0px -2px var(--shadow-color3),
+   0px -1px var(--shadow-color3), 0px 0px var(--shadow-color3), 0px 1px var(--shadow-color3), 
+  0px 2px var(--shadow-color3), 1px -2px var(--shadow-color3), 1px -1px var(--shadow-color3), 1px 0px var(--shadow-color3), 1px 1px var(--shadow-color3), 1px 2px var(--shadow-color3),
+   2px -2px var(--shadow-color3), 2px -1px var(--shadow-color3), 2px 0px var(--shadow-color3), 2px 1px var(--shadow-color3), 2px 2px var(--shadow-color3);
+
+  --text-shadow2: -2px -2px var(--shadow-color2), -2px -1px var(--shadow-color2), -2px 0px var(--shadow-color2), -2px 1px var(--shadow-color2),
+   -2px 2px var(--shadow-color2), -1px -2px var(--shadow-color2), -1px -1px var(--shadow-color2), -1px 0px var(--shadow-color2), -1px 1px var(--shadow-color2), -1px 2px var(--shadow-color2), 0px -2px var(--shadow-color2),
+   0px -1px var(--shadow-color2), 0px 0px var(--shadow-color2), 0px 1px var(--shadow-color2), 
+  0px 2px var(--shadow-color2), 1px -2px var(--shadow-color2), 1px -1px var(--shadow-color2), 1px 0px var(--shadow-color2), 1px 1px var(--shadow-color2), 1px 2px var(--shadow-color2),
+   2px -2px var(--shadow-color2), 2px -1px var(--shadow-color2), 2px 0px var(--shadow-color2), 2px 1px var(--shadow-color2), 2px 2px var(--shadow-color2);
+   
+  --text-shadow: -2px -2px var(--shadow-color), -2px -1px var(--shadow-color), -2px 0px var(--shadow-color), -2px 1px var(--shadow-color),
+   -2px 2px var(--shadow-color), -1px -2px var(--shadow-color), -1px -1px var(--shadow-color), -1px 0px var(--shadow-color), -1px 1px var(--shadow-color), -1px 2px var(--shadow-color), 0px -2px var(--shadow-color),
+   0px -1px var(--shadow-color), 0px 0px var(--shadow-color), 0px 1px var(--shadow-color), 
+  0px 2px var(--shadow-color), 1px -2px var(--shadow-color), 1px -1px var(--shadow-color), 1px 0px var(--shadow-color), 1px 1px var(--shadow-color), 1px 2px var(--shadow-color),
+   2px -2px var(--shadow-color), 2px -1px var(--shadow-color), 2px 0px var(--shadow-color), 2px 1px var(--shadow-color), 2px 2px var(--shadow-color);
+}
+
+
+
+/*寮瑰箷璁剧疆*/
+.event--message{
+  position: relative;
+  margin-bottom: 20px;
+  display: grid;
+  flex-wrap: wrap;
+  max-width: 360px;
+  width:fit-content;
+  margin-left: 10px;
+  animation-name: slideAndFade,slideAndFadeout;
+  animation-duration:0.5s,1.5s;
+  animation-timing-function:ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0s, 60s;
+}
+
+
+/*寮瑰箷鐢ㄦ埛鍚嶈缃�*/
+.event--message .username{
+  font-weight: 400;
+  font-size: 20px!important;
+  color: #cbc3b5;
+  line-height: 20px;
+  text-shadow: var(--text-shadow2);
+  margin-left: 5px;
+}
+
+/*寮瑰箷鐢ㄦ埛鍚嶆枃瀛楅€忔槑搴﹁缃�*/
+.event--message .username-text{
+  opacity: 1!important;
+}
+
+/*寮瑰箷姝ｆ枃璁剧疆*/
+.event--message .message{
+  font-weight: 500!important;
+  color: #ffffff;
+  width: fit-content;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 8px;
+  font-size: 24px;
+  line-height: 30px;
+  background-color: #282419;
+  border-radius: 8px;
+  opacity: 0.9;
+  text-shadow: var(--text-shadow);
+}
+
+/*寮瑰箷姘旀场鍓嶅皬灏惧反*/
+.event--message .message::before{
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  background-image: url(https://img.alicdn.com/imgextra/i4/2208695577013/O1CN01VqVUf121g0e9KnmIx_!!2208695577013.png);
+  background-size: 15px;
+  margin-left: -34.3px;
+  margin-top: -3px;
+  transform: rotate(1deg);
+}
+
+/** 寮瑰箷emoji璁剧疆 **/
+.bmote-wrap img {
+  max-width: calc(var(--event-font-size) * 1);
+  max-height: calc(var(--event-font-size) * 1);
+  margin: 0 calc(var(--1px) * 1);
+  margin-top: 3px;
+}
+/** 寮瑰箷鑷畾涔夎〃鎯呰缃� **/
+.event--message .emote {
+   max-width: calc(var(--event-font-size) * 5);
+  max-height: calc(var(--event-font-size) * 5);
+}
+
+
+
+/*鍥炲鍚嶅瓧璁剧疆*/
+.event--message .reply-username{
+  color: #ffffff;
+  font-weight: 500!important;
+  opacity: 1;
+}
+/*鍥炲鏄电О鍓嶆坊鍔燖*/
+.event--message .reply ::before{
+  content: "@";
+}
+
+/**澶ц埅娴锋爣璁剧疆**/
+.event--message .guard-badge{
+  margin-top: 1px;
+  --guard-icon: url(https://img.alicdn.com/imgextra/i2/2208695577013/O1CN01kmk8g321g0e9KmloD_!!2208695577013.png);
+  height: 18px;
+  width: 41px;
+}
+
+
+/*鍚勭瓑绾уぇ鑸捣璁剧疆鏂囧瓧鏍囪瘑*/
+.event--message .guard-badge--1::after{
+  height: 20px;
+  width: 150px;
+  position: absolute;
+   content: "銆愭€荤潱鎴愬憳銆�";
+  margin-top: -1px;
+  margin-left: 38px;
+  font-weight: 400;
+  font-size: 18px!important;
+  color: #cbc3b5;
+  line-height: 20px;
+  text-shadow: var(--text-shadow2);
+}
+
+.event--message .guard-badge--2::after{
+  height: 20px;
+  width: 150px;
+  position: absolute;
+   content: "銆愭彁鐫ｆ垚鍛樸€�";
+  margin-top: -1px;
+  margin-left: 38px;
+ font-weight: 400;
+  font-size: 18px!important;
+  color: #cbc3b5;
+  line-height: 20px;
+  text-shadow: var(--text-shadow2);
+}
+
+.event--message .guard-badge--3::after{
+    height: 20px;
+  width: 150px;
+  position: absolute;
+   content: "銆愯埌闀挎垚鍛樸€�";
+  margin-top: -1px;
+  margin-left: 38px;
+  font-weight: 400;
+  font-size: 18px!important;
+  color: #cbc3b5;
+  line-height: 20px;
+  text-shadow: var(--text-shadow2);
+}
+
+
+
+/*娑堟伅鍏抽棴椤�*/
+.event--message .fans-medal,.event--message .avatar-wrap,
+.event .current-rank,.event .wealth-medal,.event .mod-badge,.event .streamer-badge{
+  display: none;
+}
+
+
+
+
+/*SC璁剧疆*/
+.event-type--superchat.event-show-as--normal{
+  margin-bottom: 30px;
+  min-width: 360px;
+  margin-left: 20px;
+ max-width: 360px;
+ background-color: #282419!important;
+ opacity: 0.9;
+ animation-name: slideAndFade2,slideAndFade2out;
+  animation-duration:0.5s,1.5s;
+  animation-timing-function:ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0s, 60s;
+}
+
+/*SC涓婂崐閮ㄥ垎璁剧疆*/
+.event-type--superchat.event-show-as--normal .top{
+  background-image: url(https://img.alicdn.com/imgextra/i3/2208695577013/O1CN01DKlcq221g0e8LU4gq_!!2208695577013.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+/*SC鐢ㄦ埛鍚嶈缃�*/
+.event-type--superchat.event-show-as--normal .username{
+  margin-top: 15px;
+  width: 334px;
+  font-size: 26px;
+  color: #cbc3b5;
+  justify-content: center;
+  text-shadow: var(--text-shadow);
+}
+
+/*SC浠锋牸璁剧疆*/
+.event-type--superchat.event-show-as--normal .price{
+  margin-top: -10px;
+  width: 334px;
+  font-size: 20px;
+  color: #cbc3b5;
+  justify-content: center;
+  text-shadow: var(--text-shadow);
+}
+
+/*SC涓嬪崐姝ｆ枃璁剧疆*/
+.event-type--superchat.event-show-as--normal .message{
+  background-image: url(https://img.alicdn.com/imgextra/i1/2208695577013/O1CN01TEq4Xu21g0e7M4bnx_!!2208695577013.png);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  margin-top: -5px;
+  font-size: 24px;
+  text-align: center;
+  color: #fff;
+  text-shadow: var(--text-shadow);
+  padding-bottom: 45px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/*SC涓婁笅閮ㄥ垎鑳屾櫙閫忔槑*/
+.event-type--superchat.event-show-as--normal .top,.event-type--superchat.event-show-as--normal .message{
+  background-color: #00000000;
+}
+
+
+
+/*SC鍏抽棴椤�*/
+.event-type--superchat.event-show-as--normal .fans-medal,.message-translation,
+.event-type--superchat.event-show-as--normal .avatar-wrap{
+ display: none;
+}
+
+
+
+
+/*鍔ㄧ敾*/
+@keyframes slideAndFade {
+  0% {
+    transform: translate(-60%,70%); 
+    opacity: 0.5; 
+    filter: blur(10px); 
+  }
+  60%{
+    transform: translate(0,0) scale(1); 
+    opacity: 1;
+    filter: blur(0px); 
+
+  }
+  70%{
+    transform: translate(0,0) scale(1.05); 
+    opacity: 1; 
+    filter: blur(0px); 
+
+  }
+  100%{
+    transform: translate(0,0)scale(1); 
+    opacity: 1; 
+    filter: blur(0px); 
+  }
+}
+@keyframes slideAndFadeout {
+  0% {
+    transform: translate(0,0) scale(1); 
+    opacity: 1; 
+    filter: blur(0px); 
+  }
+  60%{
+    transform: translate(0,0) scale(0.95); 
+    opacity: 1; 
+    filter: blur(0px); 
+
+  }
+  70%{
+    transform: translate(0,0) scale(0.3); 
+    opacity: 1; 
+    filter: blur(0px); 
+
+  }
+  100%{
+    transform: translate(-140%,-70%) scale(0.1); 
+    opacity: 0.5; 
+    filter: blur(10px); 
+  }
+}
+
+@keyframes slideAndFade2 {
+  0% {
+    transform: translate(-60%); 
+    opacity: 0.5; 
+    filter: blur(10px); 
+  }
+  100%{
+    transform: translate(0); 
+    opacity: 1; 
+    filter: blur(0px); 
+  }
+}
+@keyframes slideAndFade2out {
+  0% {
+    transform: translate(0); 
+    opacity: 1; 
+    filter: blur(0px); 
+  }
+  100%{
+    transform: translate(-140%); 
+    opacity: 0.5; 
+    filter: blur(10px); 
+  }
+}
+
+
+
+
+/*鏅€氱ぜ鐗╄缃�*/
+.event--gift.event-show-as--normal.event-size--normal{
+  background-color: #00000000;
+  position: relative;
+  margin-bottom: 40px;
+  margin-left: 50px;
+  max-width: 450px;
+  min-width: 450px;
+  max-height: 80px;
+  min-height: 80px; 
+  background-image: url(https://img.alicdn.com/imgextra/i2/2208695577013/O1CN01jR7Bmu21g0e8DHKn3_!!2208695577013.png);
+  background-size: contain;
+  transform: scale(1.2);
+  opacity: 0.9;
+  animation-name: slideInFadeAndSharpen ,slideAndFade3out; /* 鍔ㄧ敾鍚嶇О */
+  animation-duration: 0.8s,1.5s; /* 鍔ㄧ敾鎸佺画鏃堕棿 */
+  animation-timing-function: ease-in-out; /* 鍔ㄧ敾閫熷害鏇茬嚎 */
+  animation-fill-mode: forwards; /* 鍔ㄧ敾缁撴潫鍚庝繚鎸佹渶缁堢姸鎬� */
+  animation-delay: 0s, 30s;
+}
+
+/*鏅€氱ぜ鐗╁浘鐗囪缃�*/
+.event--gift.event-show-as--normal.event-size--normal .gift-image-wrap img{
+  position: relative;
+   width: 45px;
+   height: 45px;
+   margin-top: 5px;
+   margin-left: 4px;
+}
+.event--gift.event-show-as--normal.event-size--normal .gift-image-wrap{
+  margin-top: -15px;
+  margin-right: 340px;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+/*鏅€氱ぜ鐗╃敤鎴峰悕璁剧疆*/
+.event--gift.event-show-as--normal.event-size--normal .username{
+  color: #fff;
+  font-weight: 400;
+  font-size: 20px;
+  margin-left: 70px;
+  margin-top: 35px;
+  text-shadow: var(--text-shadow);
+  max-width: 450px;
+  min-width: 450px;
+}
+
+/*鏅€氱ぜ鐗╃敤鎴峰悕鍓嶅悗娣诲姞鏂囧瓧*/
+.event--gift.event-show-as--normal.event-size--normal .username::after{
+  content: "閫佸嚭";
+}
+.event--gift.event-show-as--normal.event-size--normal .username::before{
+  content: "鐢�";
+}
+
+/*鏅€氱ぜ鐗╂鏂囪缃�*/
+.event--gift.event-show-as--normal.event-size--normal .message{
+  color: #fff;
+  position: absolute;
+  font-weight: 400;
+  font-size: 20px;
+  margin-left: 70px;
+  margin-top: -70px;
+  text-shadow: var(--text-shadow);
+  max-width: 450px;
+  min-width: 450px;
+}
+
+/*鏅€氱ぜ鐗╃殑鍚嶅瓧璁剧疆*/
+.gift-details-name{
+  font-weight: 400!important;
+  font-size: 20px!important;
+}
+.gift-details{
+  margin-left: 5px;
+  font-weight: 400!important;
+  font-size: 18px!important;
+}
+
+
+
+
+/*鏅€氱ぜ鐗╁叧闂」*/
+.event--gift.event-show-as--normal.event-size--normal .avatar-wrap,.event--gift.event-show-as--normal.event-size--normal .fans-medal
+,.event--gift.event-show-as--normal.event-size--normal .gift-details{
+  display: none;
+}
+
+
+
+/*楂樹寒绀肩墿璁剧疆*/
+.event--gift.event-show-as--normal.event-size--highlight{
+  background-color: #00000000;
+  position: relative;
+  margin-bottom: 40px;
+  margin-left: 50px;
+  max-width: 450px;
+  min-width: 450px;
+  max-height: 80px;
+  min-height: 80px; 
+  background-image: url(https://img.alicdn.com/imgextra/i2/2208695577013/O1CN01jR7Bmu21g0e8DHKn3_!!2208695577013.png);
+  background-size: contain;
+  transform: scale(1.2);
+  opacity: 0.9;
+  animation-name: slideInFadeAndSharpen ,slideAndFade3out; /* 鍔ㄧ敾鍚嶇О */
+  animation-duration: 0.8s,1.5s; /* 鍔ㄧ敾鎸佺画鏃堕棿 */
+  animation-timing-function: ease-in-out; /* 鍔ㄧ敾閫熷害鏇茬嚎 */
+  animation-fill-mode: forwards; /* 鍔ㄧ敾缁撴潫鍚庝繚鎸佹渶缁堢姸鎬� */
+  animation-delay: 0s, 30s;
+}
+
+/*楂樹寒绀肩墿鍥剧墖璁剧疆*/
+.event--gift.event-show-as--normal.event-size--highlight .gift-image-wrap img{
+  position: relative;
+   width: 45px;
+   height: 45px;
+   margin-top: 20px;
+   margin-left: 20px;
+}
+.event--gift.event-show-as--normal.event-size--highlight .gift-image-wrap{
+  margin-top: -15px;
+  margin-right: 340px;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+/*楂樹寒绀肩墿鐢ㄦ埛鍚嶈缃�*/
+.event--gift.event-show-as--normal.event-size--highlight .username{
+  font-weight: 400;
+  font-size: 20px;
+  margin-left: 70px;
+  margin-top: 25px;
+  text-shadow: var(--text-shadow);
+  max-width: 450px;
+  min-width: 450px;
+}
+
+/*楂樹寒绀肩墿鐢ㄦ埛鍚嶅墠鍚庢坊鍔犳枃瀛�*/
+.event--gift.event-show-as--normal.event-size--highlight .username::after{
+  content: "閫佸嚭";
+}
+.event--gift.event-show-as--normal.event-size--highlight .username::before{
+  content: "鐢�";
+}
+.event--gift.event-show-as--normal.event-size--highlight .message{
+  position: absolute;
+  font-weight: 400;
+  font-size: 20px;
+  margin-left: 70px;
+  margin-top: -6px;
+  text-shadow: var(--text-shadow);
+  max-width: 450px;
+  min-width: 450px;
+}
+/*楂樹寒绀肩墿鐨勫悕瀛楄缃�*/
+.gift-details-name{
+  font-weight: 400!important;
+  font-size: 20px!important;
+}
+.gift-details{
+  margin-left: 5px;
+  font-weight: 400!important;
+  font-size: 18px!important;
+}
+
+/*鍔ㄧ敾*/
+@keyframes slideInFadeAndSharpen {
+  from {
+    transform: translateX(-100%) scale(1.2); /* 浠庡乏杈瑰紑濮� */
+    opacity: 0; /* 瀹屽叏閫忔槑 */
+    filter: blur(5px) brightness(300%); /* 杞诲井妯＄硦鍜岃緝楂樹寒搴� */
+  }
+  to {
+    transform: translateX(0) scale(1.2); /* 婊戝叆鍒板師濮嬩綅缃� */
+    opacity: 1; /* 瀹屽叏涓嶉€忔槑 */
+    filter: blur(0) brightness(100%); /* 涓嶆ā绯婂拰姝ｅ父浜害 */
+  }
+}
+@keyframes slideAndFade3out {
+  0% {
+    opacity: 1; 
+    filter: blur(0px); 
+  }
+  100%{
+    opacity: 0; 
+    filter: blur(10px); 
+  }
+}
+
+
+
+/*楂樹寒绀肩墿鍏抽棴椤�*/
+.event-type--gift.event-show-as--normal.event-size--highlight .avatar-wrap,
+.event-type--gift.event-show-as--normal.event-size--highlight .fans-medal,
+.event-type--gift.event-show-as--normal.event-size--highlight .price,.gift-receiver{
+display: none;
+}
+
+
+
+
+
+
+/*澶ц埅娴锋牱寮�*/
+.event-type--toast.event-show-as--normal{
+  position: relative;
+   max-width: 200px;
+  min-width: 200px;
+  max-height: 200px;
+  min-height: 200px;
+  background-image: url();
+   margin-left: 170px;
+  margin-bottom: 30px;
+  background-color: #00000000;
+   animation-name:slideAndFade3out; /* 鍔ㄧ敾鍚嶇О */
+  animation-duration: 1.5s; /* 鍔ㄧ敾鎸佺画鏃堕棿 */
+  animation-timing-function: ease-in-out; /* 鍔ㄧ敾閫熷害鏇茬嚎 */
+  animation-fill-mode: forwards; /* 鍔ㄧ敾缁撴潫鍚庝繚鎸佹渶缁堢姸鎬� */
+  animation-delay: 30s;
+}
+
+/*澶ц埅娴疯儗鏅笉閫忔槑鍦�*/
+.event-type--toast.event-show-as--normal::before{
+  content: "";
+  position: absolute;
+  max-width: 200px;
+  min-width: 200px;
+  max-height: 200px;
+  min-height: 200px;
+  background-image: url(https://img.alicdn.com/imgextra/i4/2208695577013/O1CN01vOYIHK21g0e687mOn_!!2208695577013.png);
+  background-position: -10px center;
+  background-repeat: no-repeat;
+  background-size: 200px;
+  opacity: 0;
+  animation: xianshi 0.4s 0.8s ease-in-out forwards;
+  margin-left: -5px;
+}
+
+/*澶ц埅娴疯儗鏅緳绾�*/
+.event-type--toast.event-show-as--normal::after{
+  width: 200px;
+  height: 200px;
+  content: "";
+  position: absolute;
+  background-image: url(https://img.alicdn.com/imgextra/i4/2208695577013/O1CN01HIznMT21g0e7WLN5J_!!2208695577013.png);
+  background-size: 200px;
+  background-position: center center;
+  margin-bottom: 30px;
+     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%); /* 鍒濆鏃惰鍓暣涓浘鐗� */
+    opacity: 0; /* 鍒濆閫忔槑搴︿负0 */
+    filter: blur(10px); /* 鍒濆妯＄硦搴� */
+    animation: fadeInUp 1.2s ease-in-out forwards; /* 浣跨敤鍔ㄧ敾 */
+    margin-top: 30px;
+    margin-left: -20px;
+}
+
+/*澶ц埅娴锋鏂囪缃�*/
+.event-type--toast.event-show-as--normal .content{
+  opacity: 0;
+  animation: ziti 0.4s 0.8s ease-in-out forwards;
+  z-index: 99;
+}
+
+/*澶ц埅娴风敤鎴峰悕璁剧疆*/
+.event-type--toast.event-show-as--normal .username{
+  position: absolute;
+  color: #f4f2e7;
+  margin-top: -30px;
+  display: flex; /* 浣跨敤 Flexbox 甯冨眬 */
+  justify-content: center; /* 姘村钩灞呬腑 */
+  align-items: center; /* 鍨傜洿灞呬腑 */
+flex-wrap: wrap; /* 鍐呭鎹㈣ */
+  z-index: 99;
+  font-family: "鏂规鍓焊_GBK"!important;
+  font-size: 16px;
+  width: 140px;
+  height: 34px;
+  overflow: hidden;
+  text-align: center;
+  text-shadow: 0 0 calc(var(--1px) * 2) var(--shadow-color4), 0 0 calc(var(--1px) * 2) var(--shadow-color4), 0 0 calc(var(--1px) * 2) var(--shadow-color4);
+}
+
+/*澶ц埅娴锋秷鎭枃瀛楀眰绾ц皟鏁翠负鏈€涓婃柟*/
+.event-type--toast.event-show-as--normal .message{
+  z-index: 99;
+}
+
+/*澶ц埅娴风ぜ鐗╂鏂囪缃�*/
+.toast-details-type{
+  margin-top: 5px;
+  margin-left: -25px;
+  color: #f4f2e7;
+  font-family: "鏂规鍓焊_GBK"!important;
+  font-size: 45px;
+  display: flex;
+  width: 210px;
+  justify-content: center; /* 姘村钩灞呬腑 */
+  text-shadow: 0 0 calc(var(--1px) * 2) var(--shadow-color4), 0 0 calc(var(--1px) * 2) var(--shadow-color4), 0 0 calc(var(--1px) * 2) var(--shadow-color4);
+}
+/*澶ц埅娴风ぜ鐗╂鏂囧悗娣诲姞鐧昏埞*/
+.toast-details-type::after{
+  content: "鐧昏埞";
+}
+
+/*澶ц埅娴峰叧闂」*/
+.event-type--toast.event-show-as--normal .avatar-wrap,.toast-details-action,.toast-details-total-days-text-after,
+.toast-details-total-days-text-before,.toast-details-total-days,.toast-details-symbol,.toast-details-figure,
+.toast-details-unit,.event-type--toast.event-show-as--normal .price{
+  display: none;
+}
+
+/*鍔ㄧ敾*/
+@keyframes fadeInUp {
+    0% {
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%); /* 鍒濆鏃惰鍓暣涓浘鐗� */
+        opacity: 0; /* 鍒濆閫忔槑搴︿负0 */
+        filter: blur(10px); /* 鍒濆妯＄硦搴� */
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* 鏈€缁堣鍓负鏁翠釜鍥剧墖 */
+        opacity: 1; /* 鏈€缁堥€忔槑搴︿负1 */
+        filter: blur(0); /* 鏈€缁堟竻鏅� */
+    }
+}
+
+@keyframes xianshi {
+    0% {
+        opacity: 0; /* 鍒濆閫忔槑搴︿负0 */
+        filter: blur(10px); /* 鍒濆妯＄硦搴� */
+    }
+    100% {
+        opacity: 1; /* 鏈€缁堥€忔槑搴︿负1 */
+        filter: blur(0); /* 鏈€缁堟竻鏅� */
+    }
+}
+@keyframes ziti {
+    0% {
+        transform: scale(1.1);
+        opacity: 0; /* 鍒濆閫忔槑搴︿负0 */
+        filter: blur(10px); /* 鍒濆妯＄硦搴� */
+    }
+    100% {
+      transform: scale(1);
+        opacity: 1; /* 鏈€缁堥€忔槑搴︿负1 */
+        filter: blur(0); /* 鏈€缁堟竻鏅� */
+    }
+}
+
+
+
+
+
+
+/*鍏抽棴涓€澶у爢涓嶅繀瑕佺殑椤圭洰*/
+.event-gift-type--free,
+.event-type--live-start,.event-type--live-end,
+.event--interaction,.event--like-click,.event--notice,.event--effect-message,
+.event--red-envelope-start,.event--red-envelope-result,
+.event--lottery-start,.event--lottery-result,.gift-sticky-bar,
+.event.event--live-warning,.event--live-cutoff,
+.event--room-mute-on,.event--room-mute-off,.event--room-name-update,
+.event-type--mvp,.event--user-block{
+  display: none;
+}
+
+/* ===== 修改补丁：保留弹幕，不播放退出动画 ===== */
+
+/* 普通弹幕：保留原有入场动画，取消 60 秒后的退出动画 */
+.event--message {
+  animation-name: slideAndFade !important;
+  animation-duration: 0.5s !important;
+  animation-delay: 0s !important;
+  animation-timing-function: ease-in-out !important;
+  animation-fill-mode: both !important;
+}
+
+/* 醒目留言 SC：保留入场动画，取消退出动画 */
+.event-type--superchat.event-show-as--normal {
+  animation-name: slideAndFade2 !important;
+  animation-duration: 0.5s !important;
+  animation-delay: 0s !important;
+  animation-timing-function: ease-in-out !important;
+  animation-fill-mode: both !important;
+}
+
+/* 普通礼物：保留原有入场动画，并恢复 30 秒后淡出 */
+.event--gift.event-show-as--normal.event-size--normal {
+  animation-name: slideInFadeAndSharpen, slideAndFade3out !important;
+  animation-duration: 0.8s, 1.5s !important;
+  animation-delay: 0s, 30s !important;
+  animation-timing-function: ease-in-out !important;
+  animation-fill-mode: forwards !important;
+}
+
+/* 高亮礼物：保留原有入场动画，并恢复 30 秒后淡出 */
+.event--gift.event-show-as--normal.event-size--highlight {
+  animation-name: slideInFadeAndSharpen, slideAndFade3out !important;
+  animation-duration: 0.8s, 1.5s !important;
+  animation-delay: 0s, 30s !important;
+  animation-timing-function: ease-in-out !important;
+  animation-fill-mode: forwards !important;
+}
+
+/* 舰长/上舰提示：保留原有 30 秒后淡出动画 */
+.event-type--toast.event-show-as--normal {
+  animation-name: slideAndFade3out !important;
+  animation-duration: 1.5s !important;
+  animation-delay: 30s !important;
+  animation-timing-function: ease-in-out !important;
+  animation-fill-mode: forwards !important;
+}
+
+/* 兼容平台若已输出时间节点时的显示样式；CSS 本身不能生成或换算发送时间 */
+.event--message .timestamp,
+.event--message .time,
+.event--message .event-time,
+.event-type--superchat.event-show-as--normal .timestamp,
+.event-type--superchat.event-show-as--normal .time,
+.event-type--superchat.event-show-as--normal .event-time {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: #cbc3b5 !important;
+  font-size: 13px !important;
+  line-height: 18px !important;
+  margin-left: 5px !important;
+  text-shadow: var(--text-shadow2) !important;
+}
